@@ -1,0 +1,23 @@
+# License
+
+All templates are licensed under the Creative Commons Attribution 3.0 license.
+
+.. which means you can use them for both personal and commercial projects – for free! Just visibly credit us for the template somewhere on your site and you're good to go. Questions about how all this works? Feel free to get in touch.
+
+Note: If your use case makes it difficult to credit us or you'd rather just exclude it, contact us to work out a special licensing arrangement.
+
+Contact: hello @ templated.co
+
+# Image Credits
+
+All images courtesy of Unsplash (https://unsplash.com).
+
+- Martin Grincevschi (https://unsplash.com/photos/uCnOENPOBxM)
+- Pete Bellis (https://unsplash.com/photos/eDVQwVMLMgU)
+- Ciprian Lipenschi (https://unsplash.com/photos/OULAwYI3AGs)
+- Michael Dam (https://unsplash.com/photos/mEZ3PoFGs_k)
+- rawpixel.com (https://unsplash.com/photos/izTZ-TtdwCs)
+
+# Video Credits
+
+Video courtesy of Coverr (http://coverr.co).
