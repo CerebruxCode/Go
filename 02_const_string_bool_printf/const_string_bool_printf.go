@@ -29,11 +29,11 @@ func main() {
 	
 	fmt.Println(varA, varB)
 	
-	// Τα Strings είναι μια σειρά απο χαρακτήρες που βρήσκονται εντώς των " ή `
+	// Τα Strings είναι μια σειρά απο χαρακτήρες που βρίσκονται εντός των " ή `
 	
 	var myName string = "Derek Banas"
 	
-	// Το μήκος ενός string το λαμβάνουμε με την συνάρτηση len(string)
+	// Το μήκος ενός string το λαμβάνουμε με τη συνάρτηση len(string)
 	
 	fmt.Println(len(myName))
 	
@@ -41,13 +41,13 @@ func main() {
 	
 	fmt.Println(myName + " is a robot")
 	
-	// Τα Strings εντώς των " " μπορούν να περιλαμβάνουν escape symbols όπως το \n για να τυπώσουν μια νέα γραμμή 
+	// Τα Strings εντός των " " μπορούν να περιλαμβάνουν escape symbols όπως το \n για να τυπώσουν μια νέα γραμμή 
 	
 	fmt.Println("I like \n \n")
 	
 	fmt.Println("Newlines")
 	
-	// Τα Booleans είναι είτε true ή false
+	// Τα Booleans είναι τύποι δεδομένων αλήθειας και μπορούν να πάρουν δύο τιμές, true ή false
 	
 	var isOver40 bool = true
 	
