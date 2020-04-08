@@ -65,7 +65,7 @@ func getArea(shape Shape) float64 {
 
 func main() {
 
-	v := Vertex{3, 4}                // εδώ αρχικοποιούμε την v που είχαμε δημιουργήσει επάνω
+	v := Vertex{3, 4}                // εδώ αρχικοποιούμε τη v που είχαμε δημιουργήσει επάνω
 	fmt.Println("v.Abs()=", v.Abs()) // εδώ εφαρμόζουμε την Abs στις τιμές που έλαβε το v
 
 	rect := Rectangle{20, 50}
