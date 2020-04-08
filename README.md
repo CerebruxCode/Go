@@ -10,7 +10,7 @@
 
 ## Πως θα μάθω;
 
-Πρώτα απο όλα διαβάζεις, το άρθρο [Go - Εισαγωγή στον προγραμματισμό με Golang](https://cerebrux.net/2020/04/07/go-προγραμματισμός-golang/)
+Πρώτα απο όλα διαβάζεις, το άρθρο [Go - Εισαγωγή στον προγραμματισμό με Golang](https://cerebrux.net/2020/04/08/go-%cf%80%cf%81%ce%bf%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%cf%8c%cf%82-golang/)
 στο οποίο θα δεις οτι τρέχεις την παρακάτω εντολή:
 
 ```
@@ -32,7 +32,7 @@ go get github.com/CerebruxCode/Go
 
 Πηγές:
 
-* [Golang.org/tour](golang.org/tour)
+* [Golang.org/tour](https://tour.golang.org/welcome/1)
 * [Βασικές συναρτήσεις της γλώσσας προγραμματισμού GO - 2013](http://nefeli.lib.teicrete.gr/browse/sefe/hlk/2013/MoutzourisGeorgios,ZacharakisKonstantinos/attached-document-1372933587-47018-10437/MoutzourisGeorgios_ZacharakisKonstantinos2013.pdf)
 * [GO PROGRAMMING TUTORIAL by Derek Banas on Feb 15, 2015](https://web.archive.org/web/20200120114047/https://www.newthinktank.com/2015/02/go-programming-tutorial/)
 
