@@ -19,13 +19,13 @@ func main() {
 
 	sampString := "Hello World"
 
-	// Επιστρέφει αληθής εάν υπάρχει η φράση "lo" στην μεταβλητή sampString
+	// Επιστρέφει αληθής εάν υπάρχει η φράση "lo" στην variable sampString
 	fmt.Println(strings.Contains(sampString, "lo"))
 
 	// Επιστρέφει το index (θέση) της φράσης
 	fmt.Println(strings.Index(sampString, "lo"))
 
-	// Επιστρέφει αριθμό που μας λέει το πόσες φορές εμφανίζεται το "l" στην μεταβλητή sampString
+	// Επιστρέφει αριθμό που μας λέει το πόσες φορές εμφανίζεται το "l" στην variable sampString
 	fmt.Println(strings.Count(sampString, "l"))
 
 	// Αντικαθιστά το πρώτο γράμμα με το δεύτερο όσες φορές καθορίζετε (εδώ 3 φορές)
@@ -94,7 +94,7 @@ func main() {
 
 	// CASTING
 	/*
-		Το type casting είναι ένας τρόπος για τη μετατροπή μιας μεταβλητής από
+		Το type casting είναι ένας τρόπος για τη μετατροπή μιας variable από
 		έναν τύπο δεδομένων σε έναν άλλο τύπο δεδομένων.
 	*/
 
