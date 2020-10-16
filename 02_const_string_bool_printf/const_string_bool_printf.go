@@ -39,7 +39,7 @@ func main() {
 
 	// Τα Strings εντός των " " μπορούν να περιλαμβάνουν escape symbols όπως το \n για να τυπώσουν μια νέα γραμμή
 
-	fmt.Println("Μου αρέσουν \n")
+	fmt.Printf("Μου αρέσουν \n")
 
 	fmt.Println("Νέες γραμμές")
 
