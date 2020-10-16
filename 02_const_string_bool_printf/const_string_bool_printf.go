@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect" // έχει την TypeOf() function για να προσδιορίσουμε τον τύπο δεδομένων που αποθηκεύει μια μεταβλητή
+)
 
 /*
 Νέοι Όροι που θα δούμε:
@@ -56,14 +59,15 @@ func main() {
 	fmt.Println("Νέες κενές γραμμές όπως η απο πάνω μου ^^^")
 	// Ας δούμε τι είναι αποθηκευμένο στις variable που δηλώσαμε στο package level:
 	fmt.Println(
-		"dedomenaA:", dedomenaA,
-		"\ndedomenaB:", dedomenaB,
-		"\ndedomenaC:", dedomenaC,
-		"\ndedomenaD:", dedomenaD,
-		"\ndedomenaE:", dedomenaE,
-		"\ndedomenaF:", dedomenaF,
-		"\ndedomenaG:", dedomenaG,
-		"\ndedomenaH:", dedomenaH, // Όταν γράφουμε μια μεγάλη Println, είναι καλύτερα να την γράφουμε σε μορφή λίστας προς τα κάτω.
+		"dedomenaA:", dedomenaA, "και είναι τύπου:", reflect.TypeOf(dedomenaA),
+		"\ndedomenaB:", dedomenaB, "και είναι τύπου:", reflect.TypeOf(dedomenaB),
+		"\ndedomenaC:", dedomenaC, "και είναι τύπου:", reflect.TypeOf(dedomenaC),
+		"\ndedomenaD:", dedomenaD, "και είναι τύπου:", reflect.TypeOf(dedomenaD),
+		"\ndedomenaE:", dedomenaE, "και είναι τύπου:", reflect.TypeOf(dedomenaE),
+		"\ndedomenaF:", dedomenaF, "και είναι τύπου:", reflect.TypeOf(dedomenaF),
+		"\ndedomenaG:", dedomenaG, "και είναι τύπου:", reflect.TypeOf(dedomenaG),
+		"\ndedomenaH:", dedomenaH, "και είναι τύπου:", reflect.TypeOf(dedomenaH),
+		// Όταν γράφουμε μια μεγάλη Println, είναι καλύτερα να την γράφουμε σε μορφή λίστας προς τα κάτω.
 		// Σε αυτή την περίπτωση πάντα η τελευταία γραμμή λήγει με κόμμα
 	)
 	// Το μήκος ενός string το λαμβάνουμε με τη function len(string)
@@ -77,6 +81,7 @@ func main() {
 	// Ενώ με την %.xf (όπου χ αριθμός) μπορείτε να ορίσετε και την ακρίβεια του δεκαδικού ενός float
 	fmt.Printf("%f \n", pi)
 	fmt.Printf("%.3f \n", pi)
+	// Αντί της reflect.TypeOf μπορούμε να χρησιμοποιήσουμε και την %T.
 	// Η %T μας τυπώνει τον τύπο του variable για να ελέγξουμε π.χ. ως τι είναι αποθηκευμένος
 	fmt.Printf("%T \n", pi)
 	// Η %t τυπώνει τα booleans
