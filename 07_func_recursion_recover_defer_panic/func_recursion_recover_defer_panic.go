@@ -25,7 +25,9 @@ func addThemUp(numbers []float64) float64 { // H addThemUp λαμβάνει μι
 
 	sum := 0.0 // Δηλώνουμε μια variable sum με τιμή εκκίνησης 0.0
 
-	for _, val := range numbers {
+	for _, val := range numbers { // η range μας δίνει key:value
+		// αλλά εμάς δεν μας ενδιαφέρει η key οπότε δεν την αποθηκέυουμε
+		// σε κάποια variable αλλά την αγνοούμε με την "_"
 
 		// Συντομογραφία για sum = sum + val
 		sum += val
