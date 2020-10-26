@@ -99,10 +99,10 @@ func subtractThem(args ...int) int {
 
 func mikroterosArithmos(kapoioiArithmoi ...int) int {
 	mikroteros := kapoioiArithmoi[0] // θέση πρώτη (ήτοι θέση 0) απο την
-	// λίστα (slice) που θα δωθεί
+	// λίστα (slice) που θα δοθεί
 	/*
 		Δημιουργούμε μια μεταβλητή εδώ "mikroteros" και της δίνουμε την τιμή του
-		πρώτου στοιχείου στη λίστα (slice) των αριθμών που θα δωθούν ως είσοδο.
+		πρώτου στοιχείου στη λίστα (slice) των αριθμών που θα δοθούν ως είσοδο.
 	*/
 	for _, i := range kapoioiArithmoi {
 		// Στη συνέχεια, τραβάμε κάθε τιμή "i" από τη λίστα, μία
