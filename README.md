@@ -54,5 +54,3 @@ code package_main.go
 * [Golang.org/tour](https://tour.golang.org/welcome/1)
 * [Βασικές συναρτήσεις της γλώσσας προγραμματισμού GO - 2013](http://nefeli.lib.teicrete.gr/browse/sefe/hlk/2013/MoutzourisGeorgios,ZacharakisKonstantinos/attached-document-1372933587-47018-10437/MoutzourisGeorgios_ZacharakisKonstantinos2013.pdf)
 * [GO PROGRAMMING TUTORIAL by Derek Banas on Feb 15, 2015](https://web.archive.org/web/20200120114047/https://www.newthinktank.com/2015/02/go-programming-tutorial/)
-
-
