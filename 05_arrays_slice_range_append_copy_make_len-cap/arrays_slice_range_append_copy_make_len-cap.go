@@ -386,7 +386,7 @@ func main() {
 	// τύπωσε τον πίνακα, το μήκος και την χωρητικότητα του
 	fmt.Println(dinamikoSlice, len(s0), cap(s0))
 	if s0 == nil {
-		fmt.Println("Μηδενικη τιμή μιας Slice")
+		fmt.Println("Μηδενική τιμή μιας Slice")
 		fmt.Println("nil! ρε !")
 	}
 
@@ -456,37 +456,43 @@ func printSlice(s []int) { // φτιάξαμε μια δική μας προβο
 
 func printSliceB(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",
-		s, len(x), cap(x), x)
+		s,
+		len(x),
+		cap(x),
+		x)
 }
 
 func myRange() {
 
 	/*
-		Η "range" ενός βρόχου for, σαρώνει μια "slice" ή "map"
-		(τα map θα τα δούμε σε άλλο μάθημα).
-		Όταν τρέχουμε την "range" σε ένα slice, επιστρέφονται δύο τιμές
-		για κάθε επανάληψη.
-		Ο πρώτος είναι ο δείκτης (index) και ο δεύτερος είναι ένα αντίγραφο του
-		στοιχείου σε αυτόν τον δείκτη.
+		Η "range" σε έναν βρόγχο for, είχαμε πει οτι σαρώνει
+		μια "slice" ή "map" (τα map θα τα δούμε σε άλλο μάθημα).
+		Όταν τρέχουμε την "range" σε ένα slice,
+		επιστρέφονται δύο τιμές για κάθε επανάληψη.
+		- ο δείκτης (index - θέση)
+		- ένα αντίγραφο του στοιχείου σε αυτόν τον δείκτη.
 	*/
 	fmt.Println("\n== Range Slice ==")
+	// Ας φτιάξουμε την slice pow με ένα σύνολο αριθμών που είναι
+	// το αποτέλεσμα της δύναμης του 2 εις την 0, 2 εις την  1,
+	// 2 εις την 2, 2 εις την 3, 2 εις την 4, 2 εις την 5, κλπ.
 	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
-
+	// θα σαρώσουμε όλες τις τιμές της pow, και θα αντιστοιχίσουμε την θέση
+	// στο i και την τιμή στο v
 	for i, v := range pow {
-		fmt.Printf("2**%d = %d\n", i, v)
+		fmt.Printf("το αποτέλεσμα του 2**%d = %d\n", i, v)
 	}
 
-	// Άλλο παράδειγμα:
+	// Άλλο παράδειγμα δημιουργόντας ένα slice με την make:
+	fmt.Println("\n== powMake ==")
+
 	powMake := make([]int, 10)
-
-	//	Εάν θέλετε μόνο το index,
-	//	μπορείτε να παραλείψετε τη δεύτερη variable.
-
-	//	for i := range pow
+	fmt.Println("\npowMake - Αρχική κατάσταση :", powMake)
 
 	for i := range powMake {
 		powMake[i] = 1 << uint(i) // == 2**i
 	}
+	fmt.Println("powMake - Μετά το γέμισμα: ", powMake)
 	/*
 		Μπορείτε να παραλείψετε τον δείκτη ή την τιμή
 		αναθέτοντας τα σε "_" (κάτω παύλα).
@@ -495,6 +501,7 @@ func myRange() {
 		for _, value := range pow
 
 	*/
+	fmt.Println("powMake - λίστα :")
 	for _, value := range powMake {
 		fmt.Printf("%d\n", value)
 	}
