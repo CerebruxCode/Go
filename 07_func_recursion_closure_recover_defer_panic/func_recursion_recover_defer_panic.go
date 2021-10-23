@@ -236,16 +236,16 @@ func demPanic() {
 */
 func countDefer() {
 	// πρώτη προβολή
-	fmt.Println("μετράω")
+	fmt.Println("Θα εμφανιστώ πρώτα εγώ")
 
 	for i := 0; i < 10; i++ {
 		// /τέταρτη προβολή
-		defer fmt.Println(i)
+		defer fmt.Println("Τέταρτο μήνυμα εγώ", i)
 	}
 	// τρίτη προβολή
-	defer fmt.Println("τελείωσα δες παρακάτω:")
+	defer fmt.Println("Τρίτο μήνυμα εγώ:")
 	// δεύτερη προβολή
-	fmt.Println("οι αριθμοί που μέτρησα")
+	fmt.Println("Δεύτερο μήνυμα εγώ")
 }
 
 func main() { /*
