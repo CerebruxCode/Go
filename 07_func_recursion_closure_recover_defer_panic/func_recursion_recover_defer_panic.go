@@ -266,9 +266,9 @@ func main() { /*
 	listOfNums := []float64{1, 2, 3, 4, 5}
 
 	fmt.Println("Άθροισμα των τιμών :", addThemUp(listOfNums))
-
+	fmt.Println("Αφαίρεση τιμών των τιμών :", subtractThem(1, 2, 3, 4, 5))
 	num1, num2 := next2Values(5) // Δίνουμε σε 2 variables, τιμές από μια function
-	fmt.Println(num1, num2)
+	fmt.Println("Οι επόμενοι δύο αριθμοί μετά το 5 : ", num1, num2)
 
 	epaggelma := "δάσκαλος"
 	onomatEponimo := "αγνωστος αγνώστου"
@@ -276,24 +276,25 @@ func main() { /*
 	// Στείλτε έναν αόριστο αριθμό τιμών σε μια function
 	// https://en.wikipedia.org/wiki/Variadic_function (Variadic Function)
 
-	fmt.Println(subtractThem(1, 2, 3, 4, 5))
-
 	// Μπορείτε να δημιουργήσετε μια func μέσα σε μια func. Έχει πρόσβαση στις
 	// τοπικές variables της func στην οποία περιλαμβάνεται
 
-	// Μια func όπως αυτή, χωρίς τοπικές variables είναι ένα "closure"
-
 	num3 := 3
-	doubleNum := func() int {
+	doubleNum := func() int { // Μια func όπως αυτή, χωρίς
+		// τοπικές variables είναι ένα "closure"
 		num3 *= 2
 		return num3
 	}
-	fmt.Println(doubleNum())
-	fmt.Println(doubleNum())
+	fmt.Println("Πρώτο doubleNum", doubleNum())
+	fmt.Println("Δευτερο doubleNum", doubleNum())
 
+	deuteroClosure := func(h, m int) int {
+		return h + m
+	}
+	fmt.Println("To deuteroClosure 10 + 10: ", deuteroClosure(10, 10))
 	// Ψάχνουμε με το variadic function μας τον μικρότερο αριθμό
 	kapoioiArithmoi := mikroterosArithmos(13, 5, 10, 13, 17, 14, 16)
-	fmt.Println("Ο μικρότερος απο τους αριθμούς είναι το", kapoioiArithmoi)
+	fmt.Println("Ο μικρότερος απο 13, 5, 10, 13, 17, 14, 16 είναι το", kapoioiArithmoi)
 
 	// Εδώ έχουμε μια αναδρομική συνάρτηση (recursive function)
 
