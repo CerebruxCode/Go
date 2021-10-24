@@ -57,13 +57,13 @@ func main() {
 
 	a, b, c := 10, 15.5, "Μια λέξη"
 	grades := []int{10, 20, 30}
-
+	// Θυμηθείτε γιατί βάζουμε στα παρακάτω το \n. Δοκιμάστε να το αφαιρέσετε
 	fmt.Printf("το a είναι %d, το b είναι %f, το c είναι %s \n", a, b, c)
 	// => a είναι 10, b είναι 15.500000, c είναι Μια λέξη
 	fmt.Printf("%q\n", c)       // => "Μια λέξη"
 	fmt.Printf("%v\n", grades)  // => [10 20 30]
 	fmt.Printf("%#v\n", grades) // => []int{10, 20, 30}
-	fmt.Printf("%q", c)         // => βάζει την τιμή της c ανάμεσα σε " "
+	fmt.Printf("%q\n", c)       // => βάζει την τιμή της c ανάμεσα σε " "
 	fmt.Printf("το b είναι type %T και το grades είναι type %T\n", b, grades)
 	// => το b είναι type float64 και το grades είναι type []int
 	fmt.Printf("Η διεύθυνση του δείκτη &a είναι: %p\n", &a)
