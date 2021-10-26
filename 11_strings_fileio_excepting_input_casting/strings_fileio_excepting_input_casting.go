@@ -2,9 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -44,40 +41,6 @@ func main() {
 
 	fmt.Println(listOfNums)
 
-	// FILE I/O
-	/*
-		Η πρότυπη βιβλιοθήκη "io" της Go περιλαμβάνει πολλές υλοποιήσεις των διεπαφών διαχείρισης
-		αρχείων για εισαγωγή και εγγραφή δεδομένων, συνδέσεων δικτύου, συμπιεστών, κρυπτογράφησης και άλλων.
-	*/
-
-	// Δημιουργούμε ένα αρχείο με όνομα samp.txt στην διαδρομή απο όπου εκτελείται η εφαρμογή
-	// π.χ. αν τρέξουμε την εφαρμογή <<go run enas-fakelos/kodikas.go>> τότε το αρχείο θα δημιουργηθεί δίπλα απο τον φάκελο
-	// "enas-fakelos" και όχι μέσα στον φάκελο δίπλα απο το "kodikas.go"
-	file, err := os.Create("samp.txt")
-
-	// Πρόβαλε τυχόν σφάλματα
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// Γράψτε μια συμβολοσειρά στο αρχείο
-	file.WriteString("Αυτό είναι ένα τυχαίο κείμενο")
-
-	// Κλείστε το αρχείο
-	file.Close()
-
-	// Προσπάθησε να ανοίξεις το αρχείο. Αν δεν το καταφέρεις πρόβαλε το σφάλμα
-	stream, err := ioutil.ReadFile("samp.txt")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// Μετατρέψτε σε μια συμβολοσειρά
-	readString := string(stream)
-
-	fmt.Println(readString)
-
 	// Αναμονή για είσοδο
 
 	/*
@@ -90,7 +53,7 @@ func main() {
 
 	fmt.Scan(&name)
 
-	fmt.Println("Γειά σου", name, "!!")
+	fmt.Println("Γεια σου", name, "!!")
 
 	// CASTING
 	/*
