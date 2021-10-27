@@ -10,10 +10,15 @@ package main
 
 import (
 	"bufio"
+	"encoding/csv"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
+
+	"github.com/go-gota/gota/dataframe"
+	"rsc.io/pdf"
 )
 
 func main() {
@@ -25,10 +30,10 @@ func main() {
 		- Κλείνω το αρχείο (στις περισσότερες των περιπτώσεων)
 
 		Τα πακέτα που χρησιμοποιούνται συνήθως είναι :
-		- ioutils
+		- io/ioutil
 		- os
 		- bufio
-		- csv
+		- encoding/csv
 		- rsc.io/pdf
 		- etc
 
@@ -48,7 +53,7 @@ func main() {
 	*/
 
 	// Προσπάθησε να ανοίξεις το αρχείο.
-	content, err := ioutil.ReadFile("yunus.txt")
+	content, err := ioutil.ReadFile("files/yunus.txt")
 	if err != nil { // Αν δεν το καταφέρεις πρόβαλε το σφάλμα
 		log.Fatal(err)
 	}
@@ -68,7 +73,7 @@ func main() {
 	μεγάλα αρχεία.
 
 	*/
-	f, err := os.Open("sample.txt")
+	f, err := os.Open("files/sample.txt")
 	if err != nil { // Αν δεν το καταφέρεις πρόβαλε το σφάλμα
 		log.Fatal(err)
 	}
@@ -90,6 +95,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	//-------------------------------------------------//
 	/* == Μέθοδος δημιουργίας αρχείου και ανοίγματος ==
 
 		Παρακάτω, αντί να ανοίγουμε υπάρχον αρχείο,
@@ -102,7 +108,9 @@ func main() {
 		το "kodikas.go"
 
 	*/
-	createdfile, err := os.Create("edit.txt")
+
+	fmt.Printf("\n== Μέθοδος δημιουργίας και ανοίγματος αρχείου ==\n")
+	createdfile, err := os.Create("files/edit.txt")
 	if err != nil { // Πρόβαλε τυχόν σφάλματα
 		log.Fatal(err)
 	}
@@ -112,10 +120,96 @@ func main() {
 	createdfile.Close()
 	// αφού το κλείσουμε ας το ανοίξουμε με την πιο απλή
 	// μέθοδο που μάθαμε και να προβάλουμε το κείμενο του
-	openedited, err := ioutil.ReadFile("edit.txt")
+	openedited, err := ioutil.ReadFile("files/edit.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("\n\n== Μέθοδος δημιουργίας και ανοίγματος αρχείου ==\n\n")
 	fmt.Printf("\n %v", string(openedited))
+
+	//-------------------------------------------------//
+	fmt.Printf("\n\n== Μέθοδος ανοίγματος αρχείου CSV ==\n\n")
+	// == Πρώτη μέθοδος ανοίγματος CSV ==
+	//		με την βιβλιοθήκη csv
+
+	// Προσπάθησε να ανοίξεις το αρχείο
+	csvfile, err := os.Open("files/problems.csv")
+	// Αν δεν το καταφέρεις, θέλω να μου το πεις
+	if err != nil {
+		log.Fatal(err)
+	}
+	// περίμενες τις επόμενες εργασίες
+	defer csvfile.Close() // και μετά κλείσε το αρχείο
+	// Χρησιμοποίησε την βιβλιοθήκη csv. και
+	// φτιάξε έναν νέο αναγνώστη του αρχείου csvfile
+	// και ονόμασε αυτό τον αναγνώστη csvreader
+	csvreader := csv.NewReader(csvfile)
+
+	for { // Την χρησιμοποιούμε όταν δεν ξέρουμε
+		// τον συνολικό αριθμό γραμμών/στηλών που έχει το CSV
+		// Για κάθε εγγραφή να διαβαστεί και να
+		// αποθηκευτεί στην record
+		record, err := csvreader.Read()
+		// αν το σφάλμα είναι επειδή
+		// έφτασες στο τέλος του αρχείου
+		// απλά σταμάτα
+		if err == io.EOF {
+			break
+		}
+		// για οποιοδήποτε άλλο λόγο
+		// σφάλματος πες μου ποιο ήταν το σφάλμα
+		if err != nil {
+			log.Fatal(err)
+		}
+		// αν δεν υπάρχει κανένα σφάλμα τότε
+		// εμφάνισε μια μια τις εγγραφές
+		fmt.Println(record)
+		// αν θέλω μονο την 2 στήλη τότε το τρέχω με τον
+		// παρακάτω τρόπο:
+		//fmt.Println(record[1])
+	}
+	// == Δεύτερη μέθοδος ανοίγματος CSV ==
+	//με εξωτερική βιβλιοθήκη π.χ. gota, qframes, dataframe-go
+	/*
+		Οι εξωτερικές βιβλιοθήκες είναι αρκετές φορές πιο
+		εξειδικευμένες παρότι δεν ανοίκουν στην ενσωματωμένη
+		standard library της Go. Συντηρούνται όμως απο
+		την κοινότητα της go.
+
+		Πριν χρησιμοποιήσουμε την βιβλιοθήκη θα πρέπει να τρέξουμε
+		go get github.com/go-gota/gota/dataframe
+		για να κατέβει στo στον υπολογιστή μας και να
+		μπορούμε να τον κάνουμε import
+	*/
+	fmt.Printf("\n\n== Βιβλιοθήκη ανοίγματος αρχείου CSV ==\n\n")
+
+	// Ακολουθούμε το ίδιο μοτίβο, άνοιξε, επεξεργάσου, κλείσε
+	csvfilelib, err := os.Open("files/greece_covid19.csv")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer csvfilelib.Close()
+	// αφού εισάγαμε την νέα βιβλιοθήκη, χρησιμοποιούμε την ReadCSV
+	// μέθοδό της και αποθηκεύουμε το αποτέλεσμά της στην df
+	df := dataframe.ReadCSV(csvfilelib)
+	fmt.Println(df)
+
+	//-------------------------------------------------//
+	fmt.Printf("\n\n== Μέθοδος ανοίγματος αρχείου PDF ==\n\n")
+	/*
+		Πριν χρησιμοποιήσουμε την βιβλιοθήκη rsc.io/pdf
+		θα πρέπει να τρέξουμε:
+
+			go get rsc.io/pdf
+
+		για να κατέβει στo στον υπολογιστή μας και να
+		μπορούμε να τον κάνουμε import
+	*/
+	pdfile, err := pdf.Open("files/cerebrux.pdf")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(pdfile.NumPage())         // μας εμφανίζει το σύνολο σελίδων
+	fmt.Println(pdfile.Page(1).Content()) // πήγαινε στην 1 σελίδα και
+	// εμφάνισε το περιεχόμενό της κωδικοποίησης της
+
 }
