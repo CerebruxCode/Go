@@ -77,6 +77,7 @@ func addThemUp(numbers []float64) float64 {
 	return sum // Παρατηρούμε ότι αντικαταστήσαμε την fmt.Println
 	// με την return. Η εντολή return σταματάει τη συνάρτηση
 	// αμέσως και μετά επιστρέφει την τιμή στην συνάρτηση που την κάλεσε αυτή.
+	// Διαβάστε αναλυτικά https://golang.org/ref/spec#Return_statements
 
 }
 
