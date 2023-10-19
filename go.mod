@@ -8,6 +8,6 @@ require (
 )
 
 require (
-	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
 	gonum.org/v1/gonum v0.9.3 // indirect
 )
